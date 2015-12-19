@@ -1,0 +1,35 @@
+package LinkedLists;
+
+public class Intersection {
+	
+	public static ListNode findIntersection(ListNode l1, ListNode l2){
+		int m = length(l1);
+		int n = length(l2);
+		ListNode longer = m > n? l1:l2;
+		ListNode shorter = m > n? l2:l1;
+		
+		for(int i = 0; i < Math.abs(m-n); i++){
+			longer = longer.next;
+		}
+		while(longer!=null & shorter !=null){
+			if(longer == shorter){
+				return longer;
+			}
+			longer = longer.next;
+			shorter = shorter.next;
+		}
+		
+		return null;
+		
+		
+	}
+	
+	private static int length(ListNode head){
+		int n = 0;
+		while(head!=null){
+			n++;
+			head = head.next;
+		}
+		return n;
+	}
+}

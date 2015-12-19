@@ -1,0 +1,55 @@
+package LinkedLists;
+
+public class SumLists {
+	// recursive sum 
+	//
+	public static ListNode addLists(ListNode l1, ListNode l2){
+		return addHelper(l1, l2, 0);
+	}
+	
+	private static ListNode addHelper(ListNode l1, ListNode l2, int carry){
+		if(l1==null && l2==null && carry==0){
+			return null;
+		}
+		ListNode node = new ListNode(0);
+		ListNode p1 = null;
+		ListNode p2 = null;
+		int sum = carry;
+		if(l1!=null){
+			sum += l1.val;
+			p1 = l1.next;
+		}
+		if(l2!=null){
+			sum += l2.val;
+			p2 = l2.next;
+		}
+		
+		node.val = sum % 10;
+
+		node.next = addHelper(p1, p2, sum/10);
+		return node;
+	}
+	
+	public static void main(String[] args){
+		ListNode[] nodes1 = new ListNode[3];
+		ListNode[] nodes2 = new ListNode[3];
+		nodes1[0] = new ListNode(7);
+		nodes1[1] = new ListNode(1);
+		nodes1[2] = new ListNode(6);
+		nodes2[0] = new ListNode(5);
+		nodes2[1] = new ListNode(9);
+		nodes2[2] = new ListNode(4);
+		for(int i = 0; i < nodes1.length-1; i++){
+			nodes1[i].next = nodes1[i+1];
+		}
+		for(int i = 0; i < nodes2.length-1; i++){
+			nodes2[i].next = nodes2[i+1];
+		}
+		
+		ListNode res = addLists(nodes1[0], nodes2[0]);
+		while(res!=null){
+			System.out.print(res.val);
+			res = res.next;
+		}
+	}
+}

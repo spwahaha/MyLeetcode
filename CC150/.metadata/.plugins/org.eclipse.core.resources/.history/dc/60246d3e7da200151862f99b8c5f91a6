@@ -1,0 +1,9 @@
+package arraysAndStrings;
+
+public class IsUnique {
+	public static boolean isUnique(String s){
+		if(s.length() > 128) return false;
+		boolean[] 
+		return false;
+	}
+}

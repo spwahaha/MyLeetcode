@@ -1,0 +1,7 @@
+package arraysAndStrings;
+
+public class IsUnique {
+	public static boolean isUnique(String s){
+		
+	}
+}

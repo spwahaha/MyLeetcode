@@ -1,0 +1,16 @@
+package arraysAndStrings;
+
+public class CheckPermutation {
+	public static void checkPermutation(String s1, String s2){
+		if(s1.length()!=s2.length()) return false;
+		s1 = Arrays.sort(s1);
+		s2 = Arrays.sort(s2);
+		return s1.equals(s2);
+	}
+	
+	public static void main(String[] args){
+		System.out.println(checkPermutation("abc","cba"));
+		System.out.println(checkPermutation(" abc","abc"));
+		System.out.println(checkPermutation("abc","bbc"));
+	}
+}

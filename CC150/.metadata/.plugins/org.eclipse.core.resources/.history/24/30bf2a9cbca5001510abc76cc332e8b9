@@ -1,0 +1,17 @@
+package LinkedLists;
+
+public class Intersection {
+	
+	public static ListNode findIntersection(ListNode l1, ListNode l2){
+		int m = length(l1);
+		int n = length(l2);
+		
+	}
+	
+	private static int length(ListNoed head){
+		int n = 0;
+		while(head!=null){
+			
+		}
+	}
+}

@@ -1,0 +1,49 @@
+package LinkedLists;
+
+import java.util.HashSet;
+
+public class RemoveDups {
+	
+//	  Definition for singly-linked list.
+	 class ListNode {
+	     int val;
+	     ListNode next;
+	     ListNode(int x) { val = x; }
+	 }
+	 
+	 public static void removeDup(ListNode head){
+		ListNode node = head;
+		if(node == null) return;
+		HashSet<Integer> set = new HashSet<Integer>();
+		while(node.next!=null){
+			if(set.contains(node.next.val)){
+				node.next = node.next.next;
+			}else{
+				node = node.next;
+			}
+		}
+//		return head;
+	 }
+	 
+	 public static void main(String[] args){
+//		 ListNode head = new ListNode(0);
+		 ListNode[] nodes = new ListNode[9];
+		 for(int i = 0; i < nodes.length; i++){
+			 nodes[i] = new RemoveDups.ListNode(i);
+		 }
+//		 head.next = nodes[0];
+		 for(int i = 0; i < nodes.length - 1; i++){
+			 nodes[i].next = nodes[i+1];
+		 }
+		 
+		 for(int i = 0; i<nodes.length; i++){
+			 System.out.print(nodes[i].val + "   ");
+		 }
+		 removeDup(nodes[0]);
+		 for(int i = 0; i<nodes.length; i++){
+			 System.out.print(nodes[i].val + "   ");
+		 }
+		 
+	 }
+	 
+}

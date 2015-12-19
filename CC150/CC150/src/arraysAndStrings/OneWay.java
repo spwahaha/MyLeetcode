@@ -1,0 +1,64 @@
+package arraysAndStrings;
+
+public class OneWay {
+	
+	public static boolean oneEditWay(String s1, String s2){
+		if(s1.length() == s2.length()){
+			return isReplace(s1, s2);
+		}
+		if(s1.length() - s2.length() == 1){
+			// s2 insert one char to get s1
+			return isInsert(s2, s1);
+		}
+		if(s1.length() - s2.length() == -1){
+			// s1 insert one char to get s2
+			return isInsert(s1, s2);
+		}
+		return false;
+	}
+	
+	private static boolean isReplace(String s1, String s2){
+		boolean foundDiff = false;
+		for(int i = 0; i < s1.length(); i++){
+			char c1 = s1.charAt(i);
+			char c2 = s2.charAt(i);
+			
+			if(c1 != c2){
+				if(foundDiff){
+					return false;
+				}
+				foundDiff = true;
+			}
+		}
+		return true;
+	}
+	
+	private static boolean isInsert(String s1, String s2){
+		// s1 insert one to get s2
+		int index1 = 0; 
+		int index2 = 0;
+		boolean foundDiff = false;
+		for(int i = 0; i < s1.length(); i++){
+			char c1 = s1.charAt(index1);
+			char c2 = s2.charAt(index2);
+			if(c1 != c2){
+				if(foundDiff){
+					return false;
+				}
+				foundDiff = true;
+				index2++;
+			}else{
+				index1++;
+				index2++;
+			}
+		}
+		return true;
+	}
+	
+	public static void main(String[] args){
+		System.out.println(oneEditWay("pale","ple"));
+		System.out.println(oneEditWay("pales","pale"));
+		System.out.println(oneEditWay("pale", "bale"));
+		System.out.println(oneEditWay("pale", "bake"));
+	}
+}

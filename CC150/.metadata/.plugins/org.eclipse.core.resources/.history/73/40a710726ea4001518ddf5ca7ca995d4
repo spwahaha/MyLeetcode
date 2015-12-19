@@ -1,0 +1,27 @@
+package LinkedLists;
+
+import java.util.LinkedList;
+
+public class Paitition {
+	
+	public static LinkedList partition(LinkedList node, int k){
+		if(node == null) return;
+		
+		LinkedList head = node;
+		LinkedList tail = node;
+		while(node!=null){
+			LinkedList next = node.next;
+			if(node.val < k){
+				node.next = head;
+				head = node;
+			}else{
+				tail.next = node;
+				tail = node;
+				tail.next = null;
+			}
+			node = next;
+		}
+		return head;
+		
+	}
+}

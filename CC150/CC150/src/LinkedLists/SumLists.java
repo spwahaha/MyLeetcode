@@ -1,0 +1,131 @@
+package LinkedLists;
+
+public class SumLists {
+	/**
+	 * backward sum with recursion
+	 * eg, 7->1->6 + 5->9->2 = 2->1->9
+	 * @param l1 list1
+	 * @param l2 list2
+	 * @return
+	 */
+	public static ListNode addLists(ListNode l1, ListNode l2){
+		return addHelper(l1, l2, 0);
+	}
+	
+	private static ListNode addHelper(ListNode l1, ListNode l2, int carry){
+		if(l1==null && l2==null && carry==0){
+			return null;
+		}
+		ListNode node = new ListNode(0);
+		ListNode p1 = null;
+		ListNode p2 = null;
+		int sum = carry;
+		if(l1!=null){
+			sum += l1.val;
+			p1 = l1.next;
+		}
+		if(l2!=null){
+			sum += l2.val;
+			p2 = l2.next;
+		}
+		
+		node.val = sum % 10;
+
+		node.next = addHelper(p1, p2, sum/10);
+		return node;
+	}
+	
+	/**
+	 * add lists with forward order
+	 * eg, 6->1->7 + 2->9->5 = 9->1->2
+	 * @param l1
+	 * @param l2
+	 * @return
+	 */
+	public static ListNode addLists2(ListNode l1, ListNode l2){
+		padList(l1,l2);
+		ListNode head = new ListNode(0);
+		addHelper2(head, l1, l2);
+		if(head.val == 0) return head.next;
+		return head;
+	}
+	
+	private static void padList(ListNode l1, ListNode l2){
+		int n1 = 0;
+		int n2 = 0;
+		while(l1!=null){
+			n1++;
+			l1 = l1.next;
+		}
+		while(l2!=null){
+			n2++;
+			l2 = l2.next;
+		}
+		if(n1 < n2){
+			pad(l1, n2 - n1);
+		}else if(n2<n1){
+			pad(l2, n1 - n2);
+		}
+		
+	}
+	
+	private static void pad(ListNode l, int diff){
+		ListNode head = new ListNode(0);
+		ListNode node = head;
+		for(int i = 0; i < diff - 1; i++){
+				node.next = new ListNode(0);
+				node = node.next;
+			}
+		node.next = l;
+		l = head;
+	}
+	
+	private static void addHelper2(ListNode pre, ListNode l1, ListNode l2){
+		if(l1 == null || l2 == null){
+			return;
+		}
+		
+		ListNode node = new ListNode(0);
+		ListNode p1 = null;
+		ListNode p2 = null;
+		int sum = 0;
+		if(l1!=null){
+			sum += l1.val;
+			p1 = l1.next;
+		}
+		if(l2!=null){
+			sum += l2.val;
+			p2 = l2.next;
+		}
+		
+		node.val = sum % 10;
+		pre.val += sum / 10;
+		pre.next = node;
+		addHelper2(node, p1, p2);
+		
+	}
+	
+	public static void main(String[] args){
+		ListNode[] nodes1 = new ListNode[3];
+		ListNode[] nodes2 = new ListNode[3];
+		nodes1[0] = new ListNode(6);
+		nodes1[1] = new ListNode(1);
+		nodes1[2] = new ListNode(7);
+//		nodes1[3] = new ListNode(2);
+		nodes2[0] = new ListNode(3);
+		nodes2[1] = new ListNode(9);
+		nodes2[2] = new ListNode(5);
+		for(int i = 0; i < nodes1.length-1; i++){
+			nodes1[i].next = nodes1[i+1];
+		}
+		for(int i = 0; i < nodes2.length-1; i++){
+			nodes2[i].next = nodes2[i+1];
+		}
+		
+		ListNode res = addLists2(nodes1[0], nodes2[0]);
+		while(res!=null){
+			System.out.print(res.val);
+			res = res.next;
+		}
+	}
+}

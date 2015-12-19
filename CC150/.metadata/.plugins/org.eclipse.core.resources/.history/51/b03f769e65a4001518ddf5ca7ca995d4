@@ -1,0 +1,16 @@
+package LinkedLists;
+
+import LinkedLists.RemoveDups.ListNode;
+
+public class KthToLast {
+	public static class ListNode {
+	     int val;
+	     ListNode next;
+	     ListNode(int x) { val = x; }
+	 }
+	 
+	 //recursive
+	 public static void kthLast(ListNode head){
+		 
+	 }
+}

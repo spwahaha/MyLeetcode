@@ -1,0 +1,28 @@
+package LinkedLists;
+
+
+public class Paitition {
+	
+	public static ListNode partition(ListNode node, int k){
+		if(node == null) return null;
+		
+		ListNode head = node;
+		ListNode tail = node;
+		while(node!=null){
+			ListNode next = node.next;
+			if(node.val < k){
+				node.next = head;
+				head = node;
+			}else{
+				tail.next = node;
+				tail = node;
+				tail.next = null;
+			}
+			node = next;
+		}
+		return head;
+		
+	}
+	
+	
+}

@@ -1,0 +1,123 @@
+package arraysAndStrings;
+
+public class ZeroMatrix {
+	//record cols and rows that has 0 and then set these zero
+	public static void setZero(int[][] mat){
+		if(mat == null || mat.length == 0) return;
+		int n = mat.length;
+		int m = mat[0].length;
+		
+		boolean[] row = new boolean[n];
+		boolean[] col = new boolean[m];
+		for(int i = 0; i < n; i++){
+			for(int j = 0;  j < m; j++){
+				if(mat[i][j]==0){
+					row[i] = true;
+					col[j] = true;
+				}
+			}
+		}
+		
+		for(int i = 0; i < n; i++){
+			if(row[i]){
+				for(int j = 0; j < m; j++){
+					mat[i][j] = 0;
+				}
+			}
+		}
+		
+		for(int i = 0; i < m; i++){
+			if(col[i]){
+				for(int j = 0; j < n; j++){
+					mat[j][i] = 0;
+				}
+			}
+		}
+	}
+	
+	// record the zero info in first row and col
+	public static void setZeros1(int[][] mat){
+		if(mat == null || mat.length==0) return;
+		boolean firstRowZero = false;
+		boolean firstColZero = false;
+		int n = mat.length;
+		int m = mat[0].length;
+		
+		for(int i = 0; i < n; i ++){
+			if(mat[i][0] == 0){
+				firstColZero = true;
+				break;
+			}
+		}
+		for(int i = 0; i < m; i++){
+			if(mat[0][m] == 0){
+				firstRowZero = true;
+				break;
+			}
+		}
+		
+		for(int i = 1; i < n; i++){
+			for(int j = 1; j < m; j++){
+				if(mat[i][j] == 0){
+					mat[i][0] = 0;
+					mat[0][j] = 0;
+				}
+			}
+		}
+		
+		for(int i = 0; i < n; i++){
+			if(mat[i][0] == 0){
+				for(int j = 0; j < m; j++){
+					mat[i][j] = 0;
+				}
+			}
+		}
+		
+		for(int i = 0; i < m; i++){
+			if(mat[0][i] == 0){
+				for(int j = 0; j < n; j++){
+					mat[j][i] = 0;
+				}
+			}
+		}
+		if(firstRowZero){
+			for(int i = 0; i < m; i++){
+				mat[0][i] = 0;
+			}
+		}
+		
+		if(firstColZero){
+			for(int i = 0; i < n; i++){
+				mat[i][0] = 0;
+			}
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	public static void main(String[] args){
+		int[][] mat = {{1,0,1,1},
+						{0,1,1,1},
+						{1,1,1,1}};
+						
+		for(int i = 0; i < mat.length;i++){
+			for(int j = 0; j < mat[0].length; j++){
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+		setZero1(mat);
+		System.out.println();
+		for(int i = 0; i < mat.length;i++){
+			for(int j = 0; j < mat[0].length; j++){
+				System.out.print(mat[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}

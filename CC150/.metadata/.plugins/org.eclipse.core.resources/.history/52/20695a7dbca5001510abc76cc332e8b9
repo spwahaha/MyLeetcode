@@ -1,0 +1,9 @@
+package LinkedLists;
+
+public class Intersection {
+	
+	ListNode findIntersection(ListNode l1, ListNode l2){
+		int m = 
+		
+	}
+}
