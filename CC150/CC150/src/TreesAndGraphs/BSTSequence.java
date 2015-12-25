@@ -29,10 +29,10 @@ public class BSTSequence {
 			list.remove(list.size()-1);
 //		}
 			
-//			list.add(root.val);
-//			helper(root.right, list, res, size);
-//			helper(root.left,list,res,size);
-//			list.remove(list.size()-1);
+			list.add(root.val);
+			helper(root.right, list, res, size);
+			helper(root.left,list,res,size);
+			list.remove(list.size()-1);
 //		if(root.right!=null){
 //			list.add(root.val);
 //			helper(root.right, list, res, size);

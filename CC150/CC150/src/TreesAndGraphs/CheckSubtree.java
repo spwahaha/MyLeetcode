@@ -3,6 +3,8 @@ package TreesAndGraphs;
 public class CheckSubtree {
 	
 	/**
+	 * check whether tree1 is tree2's subtree by compare the traversal string
+	 * string of tree1 should be the substring of tree2 
 	 * Compare by traversal string
 	 * @param tree1
 	 * @param tree2
@@ -16,6 +18,11 @@ public class CheckSubtree {
 		return sb1.indexOf(sb2.toString())!=-1;
 	}
 	
+	/**
+	 * traversal to get the pre-order string
+	 * @param root
+	 * @param sb
+	 */
 	private static void traversal(TreeNode root, StringBuilder sb){
 		if(root == null){
 			sb.append("x");
