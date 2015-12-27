@@ -37,7 +37,9 @@ public class QuickSort {
 	}
 	
 	public static void main(String[] args){
-		Comparable[] a = {68,2,53,4,1,9,9,-2,3,-1,22};
+//		Comparable[] a = {68,2,53,4,1,1,9,9,-2,3,3,-1,-1,22};
+		Comparable[] a = {5,5};
+
 		quickSort(a);
 		for(int i = 0; i < a.length; i++){
 			System.out.print(a[i]+",");

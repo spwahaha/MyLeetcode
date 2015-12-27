@@ -25,8 +25,8 @@ public class MergeSort {
 		int j = mid+1;
 		
 		while(m<=hi){
-			if(i>mid) a[m++] = aux[j];
-			else if(j>hi) a[m++] = aux[i];
+			if(i>mid) a[m++] = aux[j++];
+			else if(j>hi) a[m++] = aux[i++];
 			else if(aux[i].compareTo(aux[j])<0)
 				a[m++] = aux[i++];
 			else a[m++] = aux[j++];	

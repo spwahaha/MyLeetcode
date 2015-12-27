@@ -19,9 +19,9 @@ public class Solution {
 		int i = lo+1;
 		int j = hi;
 		while(true){
-			while(i<hi&&nums[i]<pivot)
+			while(i<hi&&nums[i]<=pivot)
 				i++;
-			while(j>lo&&nums[j]>pivot)
+			while(j>lo&&nums[j]>=pivot)
 				j--;
 			if(i>=j)
 				break;
@@ -37,8 +37,8 @@ public class Solution {
 	}
 	
 	public static void main(String[] args){
-		int[] a = {7,6,5,4,3,2,1};
-		System.out.println(findKthLargest(a,4));
+		int[] a = {2,2};
+		System.out.println(findKthLargest(a,1));
 		for(int i = 0; i < a.length; i++){
 			System.out.print(a[i]+",");
 		}
