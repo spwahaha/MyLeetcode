@@ -34,7 +34,7 @@ public class SearchInRotatedArray {
 				int res = search(nums, start, mid-1, target);
 				if(res!=-1) return res;
 				else{
-					return search(nums, m 	id, end-1, target);
+					return search(nums, mid, end-1, target);
 				}
 			}
 		}

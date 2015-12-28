@@ -1,7 +1,5 @@
 package SortingandSearching;
 
-import java.util.TreeSet;
-
 public class SortedMatrixSearch {
 	
 	public static int[] search(int[][] nums, int target){
