@@ -1,10 +1,10 @@
 package hard;
 
 public class TreeNode {
-	TreeNode left;
-	TreeNode right;
-	TreeNode parent;
-	int val;
+	public TreeNode left;
+	public TreeNode right;
+	public TreeNode parent;
+	public int val;
 	public TreeNode(int val){
 		this.val = val;
 	}
