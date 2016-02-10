@@ -5,17 +5,17 @@
       ListNode next;
       ListNode(int x) { 
     	  val = x;
-//    	  next = null;
+    	  next = null;
       }
       
-      public String toString(){
-    	  
-    	  String result =""+val;
-    	  while(next!=null){
-    		  result+=next.val;
-    		  next = next.next;
-    	  }
-    	  return result;
-      }
+//      public String toString(){
+//    	  
+//    	  String result =""+val;
+//    	  while(next!=null){
+//    		  result+=next.val;
+//    		  next = next.next;
+//    	  }
+//    	  return result;
+//      }
   }
  
