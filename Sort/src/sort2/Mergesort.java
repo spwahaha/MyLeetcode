@@ -30,15 +30,14 @@ public class Mergesort {
 			cur++;
 		}
 		
-		int diff = mid - left;
 		// low - mid    mid+1 - high inclusive
 		// so, need left + i == mid
 		// so, (i = mid - left) == diff
 		// i -> 0~diff inclusive
 		// if left side is sorted, then left = mid+1, 
 		// the following will not be executed
-		for(int i = 0; i <= diff; i++){
-			nums[cur+i] = au[left+i];
+		while(left <= mid){
+			nums[cur++] = au[left++];
 		}
 	}
 	
