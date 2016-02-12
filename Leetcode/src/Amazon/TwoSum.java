@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class TwoSum {
+	// using hashset, no dup
 	public static List<List<Integer>> twoSum(int[] nums, int target){
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if(nums == null || nums.length < 2){
@@ -26,6 +27,7 @@ public class TwoSum {
 		return res;
 	}
 	
+	// with duplicates
 	public static List<List<Integer>> twoSum2(int[] nums, int target){
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if(nums == null || nums.length < 2){

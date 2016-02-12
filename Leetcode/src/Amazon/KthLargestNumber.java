@@ -1,17 +1,19 @@
 package Amazon;
 
+import java.util.PriorityQueue;
+
 public class KthLargestNumber {
 	public static int findKthLargest(int[] nums, int k){
 		int low = 0;
 		int high = nums.length - 1;
 		while(low <= high){
 			int j = partition(nums, low, high);
-			if(j == nums.length - k){
+			if(j + 1 == k){
 				return nums[j];
-			}else if(j > nums.length - k){
-				high = j - 1;
-			}else{
+			}else if(j + 1 < k){
 				low = j + 1;
+			}else{
+				high = j - 1;
 			}
 		}
 		
@@ -23,10 +25,10 @@ public class KthLargestNumber {
 		int i = low + 1;
 		int j = high;
 		while(true){
-			while(i < high && nums[i] <= num){
+			while(i < high && nums[i] >= num){
 				i++;
 			}
-			while(j > low && nums[j] >= num){
+			while(j > low && nums[j] <= num){
 				j--;
 			}
 			if(i >= j) break;
@@ -39,6 +41,17 @@ public class KthLargestNumber {
 		nums[low] = nums[j];
 		nums[j] = temp;
 		return j;
+	}
+	
+	public static int findKthLargest2(int[] nums, int k){
+		PriorityQueue pq = new PriorityQueue<Integer>();
+		for(int i = 0; i < nums.length; i++){
+			pq.add(nums[i]);
+		}
+		while(pq.size() > k){
+			pq.poll();
+		}
+		return (int)pq.poll();
 	}
 	
 	public static void main(String[] args){
