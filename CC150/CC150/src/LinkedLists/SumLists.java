@@ -108,12 +108,12 @@ public class SumLists {
 	public static void main(String[] args){
 		ListNode[] nodes1 = new ListNode[3];
 		ListNode[] nodes2 = new ListNode[3];
-		nodes1[0] = new ListNode(6);
-		nodes1[1] = new ListNode(1);
-		nodes1[2] = new ListNode(7);
+		nodes1[0] = new ListNode(9);
+		nodes1[1] = new ListNode(9);
+		nodes1[2] = new ListNode(9);
 //		nodes1[3] = new ListNode(2);
-		nodes2[0] = new ListNode(3);
-		nodes2[1] = new ListNode(9);
+		nodes2[0] = new ListNode(1);
+		nodes2[1] = new ListNode(0);
 		nodes2[2] = new ListNode(5);
 		for(int i = 0; i < nodes1.length-1; i++){
 			nodes1[i].next = nodes1[i+1];
