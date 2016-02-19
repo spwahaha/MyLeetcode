@@ -25,7 +25,7 @@ public class Subsets {
         }
     }
     
-    //use 0 and 1 to present whether have this element.
+    //use 0 and 1 to present whether have this element. iterative without dup
     public List<List<Integer>> subsets2(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0){
@@ -37,9 +37,6 @@ public class Subsets {
             res.add(new ArrayList<Integer>());
         }
         for(int i = 0; i < nums.length; i++){
-        	if(i != 0 && nums[i] == nums[i - 1]){
-        		continue;
-        	}
             for(int j = 0; j < setNumber; j++){
                 if(((j>>i)&1)==1){
                     res.get(j).add(nums[i]);

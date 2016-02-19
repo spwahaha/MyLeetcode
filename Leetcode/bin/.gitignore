@@ -1,11 +1,14 @@
 /AdditiveNumber.class
+/AkunaCapital/
+/Amazon/
 /Binary_Tree_Paths.class
 /Compare_Version_Numbers.class
 /First_Missing_Positive.class
 /InsertInterval$1.class
 /InsertInterval$Interval.class
 /InsertInterval.class
-/LRU.class
+/LRUCache$ListNode.class
+/LRUCache.class
 /Leetcode.class
 /ListNode.class
 /Medium/
@@ -29,7 +32,3 @@
 /Word_Ladder.class
 /hard/
 /longest_increasing_subarray.class
-/LRUCache$ListNode.class
-/LRUCache.class
-/Amazon/
-/AkunaCapital/
