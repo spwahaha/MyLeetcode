@@ -1,7 +1,7 @@
 package Amazon;
 
 public class FirstMissingPositive {
-    public int firstMissingPositive(int[] nums) {
+    public static int firstMissingPositive(int[] nums) {
         // put the element where it should be
         // 1 -> index 0
         // nums[i] --> nums[nums[i] - 1]
@@ -9,7 +9,7 @@ public class FirstMissingPositive {
             return 1;
         }
         for(int i = 0; i < nums.length; i++){
-            while(nums[i] > 0 && nums[i] < nums.length && nums[i] != nums[nums[i] - 1]){
+            if(nums[i] > 0 && nums[i] < nums.length && nums[i] != nums[nums[i] - 1]){
                 swap(nums, i, nums[i] - 1);    
             }
         }
@@ -22,9 +22,14 @@ public class FirstMissingPositive {
         return nums.length + 1;
     }
     
-    private void swap(int[] nums, int i, int j){
+    private static void swap(int[] nums, int i, int j){
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+    
+    public static void main(String[] args){
+    	int[] nums = {-1, 4, 2, 1, 9, 10};
+    	firstMissingPositive(nums);
     }
 }
