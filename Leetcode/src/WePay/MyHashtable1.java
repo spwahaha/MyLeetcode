@@ -1,9 +1,10 @@
+package WePay;
 import java.io.*;
 import java.util.*;
 
-public class MyHashtable<K, V> {    
+public class MyHashtable1<K, V> {    
     public static void main(String args[]) throws Exception {
-        new TestHarness(new MyHashtable<String, String>()).run();
+        new TestHarness(new MyHashtable1<String, String>()).run();
     }
     
     class Entry<K, V>{
@@ -19,7 +20,7 @@ public class MyHashtable<K, V> {
     
     Entry<K, V>[] list;
     int capacity;
-    public MyHashtable(){
+    public MyHashtable1(){
         this.capacity = 23;
         this.list = new  Entry[this.capacity];
     }
@@ -77,9 +78,9 @@ public class MyHashtable<K, V> {
      * A helper class that tests MyHashtable by feeding it puts and gets from STDIN.
      */
     public static class TestHarness implements Runnable {
-        final MyHashtable<String, String> hashtable;
+        final MyHashtable1<String, String> hashtable;
 
-        public TestHarness(MyHashtable<String, String> hashtable) {
+        public TestHarness(MyHashtable1<String, String> hashtable) {
             this.hashtable = hashtable;
         }
 
