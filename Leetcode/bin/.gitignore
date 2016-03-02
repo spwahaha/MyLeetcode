@@ -1,9 +1,10 @@
-/Mulesoft/
+/FB/
 /AdditiveNumber.class
 /AkunaCapital/
 /Amazon/
 /Binary_Tree_Paths.class
 /Compare_Version_Numbers.class
+/Extremum.class
 /First_Missing_Positive.class
 /InsertInterval$1.class
 /InsertInterval$Interval.class
@@ -12,9 +13,11 @@
 /LRUCache.class
 /Leetcode.class
 /ListNode.class
+/LongestCommonSequence.class
 /Medium/
 /MinimumWindowSubstring.class
 /Minimum_Size_Subarray_Sum.class
+/Mulesoft/
 /PalindromeList.class
 /PalindromeString.class
 /Palindrome_Linked_List.class
@@ -26,6 +29,9 @@
 /Solution.class
 /SqrtX.class
 /ThreeSum.class
+/WePay/
+/WePay$Entry.class
+/WePay.class
 /WordBreakII.class
 /WordDictionary$TrieNode.class
 /WordDictionary.class
@@ -33,8 +39,3 @@
 /Word_Ladder.class
 /hard/
 /longest_increasing_subarray.class
-/LongestCommonSequence.class
-/Extremum.class
-/WePay.class
-/WePay$Entry.class
-/WePay/
